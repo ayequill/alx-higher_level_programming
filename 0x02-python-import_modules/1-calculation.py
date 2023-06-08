@@ -15,5 +15,4 @@ if __name__ == '__main__':
     # Product
     print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
     # Quotient
-    print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
-    
+    print("{} / {} = {}".format(a, b, div(a, b)))
