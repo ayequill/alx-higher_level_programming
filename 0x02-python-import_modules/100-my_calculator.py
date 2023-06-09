@@ -9,7 +9,7 @@ if __name__ == "__main__":
         exit(1)
 
     list_of_operators = ["+", "-", "*", "/"]
-    if not argv[2] in list_of_operators:
+    if argv[2] not in list_of_operators:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
 
