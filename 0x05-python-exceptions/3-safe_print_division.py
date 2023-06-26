@@ -10,6 +10,7 @@ def safe_print_division(a, b):
     Returns:
         _int/float_: _description_
     """
+    results = 0
     try:
         results = a / b
     except (ZeroDivisionError, TypeError):
