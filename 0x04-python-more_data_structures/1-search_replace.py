@@ -5,7 +5,7 @@ def search_replace(my_list, search, replace):
     """_summary_
 
     Args:
-        mylist (_list_): _list with numbers_
+        my_list (_list_): _list with numbers_
         search (_number_): _element to be replaced_
         replace (_number_): _new element_
 
