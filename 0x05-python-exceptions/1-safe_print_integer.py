@@ -4,7 +4,7 @@ def safe_print_integer(value):
     """_summary_
 
     Args:
-        value (_number_): _description_
+        value (_int_): _description_
 
     Returns:
         _bool_: _description_

@@ -9,7 +9,7 @@ def safe_print_list(my_list=[], x=0):
     Returns:
         _number_: _length of items in list_
     """
-    len_of_list: number = 0
+    len_of_list: int = 0
     for index in range(x):
         try:    
             print("{}".format(my_list[index]), end="")
