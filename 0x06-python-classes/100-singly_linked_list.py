@@ -70,7 +70,7 @@ class Node:
             TypeError: if value or Node is not of the same type
         """
         if not isinstance(value, Node) and value is not None:
-            raise TypeError("next_node must be a Node")
+            raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
 
@@ -121,15 +121,17 @@ class SinglyLinkedList:
         current = self.__head
         if current is None:
             self.__head = new_node
-        elif value < current.data:
+            return
+        if value < current.data:
             new_node.next_node = self.__head
             self.__head = new_node
-        else:
-            current = self.__head
-            while current.next_node and value > current.next_node.data:
-                current = current.next_node
-            new_node.next_node = current.next_node
-            current.next_node = new_node
+            return
+        
+        current = self.__head
+        while current.next_node and value > current.next_node.data:
+            current = current.next_node
+        new_node.next_node = current.next_node
+        current.next_node = new_node
 
     @staticmethod
     def counter(node):
@@ -153,3 +155,4 @@ class SinglyLinkedList:
             _type_: _description_
         """
         return self.__head
+    
