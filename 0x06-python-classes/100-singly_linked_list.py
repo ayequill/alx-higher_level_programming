@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """_summary_
 
     Raises:
@@ -29,19 +28,21 @@ class Node:
 
     @property
     def data(self):
-        """_summary_
+        """
+        Getter for the data
 
         Returns:
-            _type_: _description_
+            _int_: the data
         """
         return self.__data
 
     @data.setter
     def data(self, value):
-        """_summary_
+        """
+        Setter for the data
 
         Raises:
-            TypeError: _description_
+            TypeError: if the value isnt a number
         """
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
@@ -49,15 +50,25 @@ class Node:
 
     @property
     def next_node(self):
-        """_summary_
+        """
+        Getter for next_node property
 
         Returns:
-            _type_: _description_
+            _Node_: next node
         """
         return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
+        """
+        Setter function for the next node
+
+        Args:
+            value (_int_): number value
+
+        Raises:
+            TypeError: if value or Node is not of the same type
+        """
         if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node")
         self.__next_node = value
@@ -85,32 +96,19 @@ class SinglyLinkedList:
         Returns:
             str: the string representation of the linked list
         """
-
+# if the list is empty is i return an empty string
         if self.__head is None:
-            return "[]"
+            return ""
 
         current_node = self.__head
-        string_representation = str(current_node.data)
+        string_representation = ""
 
         # while the next node is not none
-        while current_node.next_node:
-            if current_node.data < 0:
-                string_representation += "\n"
-            current_node = current_node.next_node
+        while current_node:
             string_representation += str(current_node.data) + "\n"
+            current_node = current_node.next_node
         return string_representation
 
-    # def sorted_insert(self, value):
-    #     """
-    #     This is a singly linked list sorted insert
-
-    #     Args:
-    #         value (int): the value to insert
-    #     """
-    #     # If there is no value in the head or the list is empty
-    #     if self.__head is None:
-    #         self.__head = Node(value, self.__head)
-    #         return
     def sorted_insert(self, value):
         """
         This is a singly linked list sorted insert
@@ -120,9 +118,10 @@ class SinglyLinkedList:
         """
 
         new_node = Node(value)
-        if self.__head is None:
+        current = self.__head
+        if current is None:
             self.__head = new_node
-        elif value < self.__head.data:
+        elif value < current.data:
             new_node.next_node = self.__head
             self.__head = new_node
         else:
@@ -131,14 +130,6 @@ class SinglyLinkedList:
                 current = current.next_node
             new_node.next_node = current.next_node
             current.next_node = new_node
-
-    def get_head(self):
-        """_summary_
-
-        Returns:
-            _type_: _description_
-        """
-        return self.__head
 
     @staticmethod
     def counter(node):
@@ -154,3 +145,11 @@ class SinglyLinkedList:
             count += 1
             node = node.next_node
         return count
+
+    def get_head(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
+        return self.__head
