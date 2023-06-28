@@ -107,7 +107,7 @@ class SinglyLinkedList:
         while current_node:
             string_representation += str(current_node.data) + "\n"
             current_node = current_node.next_node
-        return string_representation
+        return string_representation[:-1]
 
     def sorted_insert(self, value):
         """
