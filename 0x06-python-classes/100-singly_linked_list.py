@@ -21,7 +21,8 @@ class Node:
 
         Args:
             data (int): the value the node holds
-            next_node (node, optional): pointer to the next node. Defaults to None.
+            next_node (node, optional): pointer to the next node.
+            Defaults to None.
         """
         self.__data = data
         self.__next_node = next_node
