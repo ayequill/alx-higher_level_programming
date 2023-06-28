@@ -126,7 +126,7 @@ class SinglyLinkedList:
             new_node.next_node = self.__head
             self.__head = new_node
             return
-        
+
         current = self.__head
         while current.next_node and value > current.next_node.data:
             current = current.next_node
@@ -155,4 +155,3 @@ class SinglyLinkedList:
             _type_: _description_
         """
         return self.__head
-    
