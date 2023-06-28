@@ -24,8 +24,8 @@ class Node:
             next_node (node, optional): pointer to the next node.
             Defaults to None.
         """
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
