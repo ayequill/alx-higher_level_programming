@@ -86,21 +86,15 @@ class Square:
         """
         return self.__size ** 2
 
-    def my_print(self) -> str:
+    def my_print(self):
         """
-        Returns the square as a string representation.
+        Prints the square with '#'
         """
-        result = ""
         if self.__size == 0:
-            return result
-
-        for _ in range(self.__position[1]):
-            result += "\n"
-
-        for _ in range(self.__size):
-            # Number of spaces for horizontal position
-            indent = " " * self.__position[0]
-            line = "#" * self.__size  # Line with '#' characters
-            result += f"{indent}{line}\n"
-        print(result)
-        return result
+            print()
+        else:
+            # honestly dont understand this well
+            for _ in range(self.__position[1]):
+                print()
+            for _ in range(self.__size):
+                print(" " * self.__position[0] + "#" * self.__size)
