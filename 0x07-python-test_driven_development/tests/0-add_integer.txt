@@ -1,0 +1,85 @@
+Testcases for ``0-add_integer`` module
+============================================================================
+>>> add_integer = __import__("0-add_integer").add_integer
+
+Test case: add_integer(5)
+Expected output: 103
+Explanation: The default value of b is 98, so adding 5 to 98 results in 103.
+----------------------------------------------------------------
+>>> add_integer(5)
+103
+
+Test case: add_integer(5, 5)
+Expected output: 10
+Explanation: Adding 5 and 5 results in 10.
+----------------------------------------------------------------
+>>> add_integer(5,5)
+10
+
+Test case: add_integer(5, -5)
+Expected output: 0
+Explanation: Adding 5 and -5 results in 0.
+----------------------------------------------------------------
+>>> add_integer(5, -5)
+0
+
+Test case: add_integer(5.5, 5.5)
+Expected output: 10
+Explanation: The function converts the float values to integers and adds them, resulting in 10.
+----------------------------------------------------------------
+>>> add_integer(5.5, 5.5)
+10
+
+Test case: add_integer(5)
+Expected output: 103
+Explanation: The default value of b is 98, so adding 5 to 98 results in 103.
+----------------------------------------------------------------
+>>> add_integer(5.5)
+103
+
+Test case: add_integer(-5, -5)
+Expected output: -10
+Explanation: Adding -5 and -5 results in -10.
+----------------------------------------------------------------
+>>> add_integer(-5, -5)
+-10
+
+Test case: add_integer("5")
+Expected exception: TypeError
+Explanation: The function expects an integer as the first argument, so passing a string argument raises a TypeError.
+----------------------------------------------------------------
+>>> add_integer("5")
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+
+Test case: add_integer("one", "two")
+Expected exception: TypeError
+Explanation: The function expects integers as arguments, so passing two string arguments raises a TypeError.
+----------------------------------------------------------------
+>>> add_integer("one", "two")
+Traceback (most recent call last):
+ ...
+TypeError: a must be an integer
+
+Test case: add_integer(float('-inf'), 10)
+Expected exception: OverflowError
+Explanation: Trying to convert float infinity to an integer raises an OverflowError
+----------------------------------------------------------------
+>>> add_integer(float('-inf'), 10)
+Traceback (most recent call last):
+  ...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('-inf'), 10)
+Traceback (most recent call last):
+  ...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('-inf'), 10)
+Traceback (most recent call last):
+ ...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(2, b=5.5)
+7
