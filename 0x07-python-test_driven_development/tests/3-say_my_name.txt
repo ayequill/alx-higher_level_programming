@@ -1,0 +1,45 @@
+Testcases for ```say_my_name``` module
+=======================================
+
+# Importing module 
+>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+# Test case: say_my_name("Siaw")
+# Expected output: My name is Siaw
+# Explanation: When only the first name is provided, the function returns a string with the given name.
+>>> say_my_name("Siaw")
+My name is Siaw 
+
+# Test case: say_my_name("Siaw", "Nick")
+# Expected output: My name is Siaw Nick
+# Explanation: When both the first name and last name are provided, the function returns a string concatenating both names.
+>>> say_my_name("Siaw", "Nick")
+My name is Siaw Nick
+
+# Test case: say_my_name("Siaw", 3)
+# Expected exception: TypeError
+# Explanation: The function expects the last name to be a string, so passing an integer raises a TypeError.
+>>> say_my_name("Siaw", 3)
+Traceback (most recent call last):
+  ...
+TypeError: last_name must be a string
+
+# Test case: say_my_name(3)
+# Expected exception: TypeError
+# Explanation: The function expects the first name to be a string, so passing an integer raises a TypeError.
+>>> say_my_name(3)
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+# Test case: say_my_name("2", "3")
+# Expected output: My name is 2 3
+# Explanation: When both names are provided as strings, the function returns a string concatenating both names.
+>>> say_my_name("2", "3")
+My name is 2 3
+
+# Test case: say_my_name("")
+# Expected output: My name is
+# Explanation: When an empty string is provided as the first name, the function returns a string with an empty first name and a "My name is" prefix.
+>>> say_my_name("")
+My name is  
