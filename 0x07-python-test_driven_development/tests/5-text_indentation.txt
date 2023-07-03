@@ -46,9 +46,7 @@ Each line should be indented.
 >>> text_indentation("")
 >>> text_indentation(6)
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/siaw/Desktop/Projects/alx-higher_level_programming/0x07-python-test_driven_development/5-text_indentation.py", line 17, in text_indentation
-    raise TypeError("text must be a string")
+ ...
 TypeError: text must be a string
 >>> text_indentation("Cool?.")
 Cool?
