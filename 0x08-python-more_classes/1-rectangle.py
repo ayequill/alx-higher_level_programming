@@ -17,6 +17,19 @@ class Rectangle:
             width (int): width of the Rectangle
             height (int): height of the Rectangle
         """
+
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+
+        if height < 0:
+            raise ValueError("height must be >= 0")
+
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+
+        if width < 0:
+            raise ValueError("width must be >= 0")
+
         self.__width = width
         self.__height = height
 
@@ -68,3 +81,11 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+
+my_rectangle = Rectangle(2, 4)
+print(my_rectangle.__dict__)
+
+my_rectangle.width = 10
+my_rectangle.height = 3
+print(my_rectangle.__dict__)
