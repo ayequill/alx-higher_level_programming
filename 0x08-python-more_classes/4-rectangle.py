@@ -107,7 +107,8 @@ class Rectangle:
         Return a string representation of the Rectangle
 
         Returns:
-            str: returns a string representation of the Rectangle with # characters
+            str: returns a string representation of the Rectangle
+            with # characters
         """
         if any(x == 0 for x in (self.__height, self.__width)):
             return ''
