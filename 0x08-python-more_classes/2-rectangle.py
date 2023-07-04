@@ -100,6 +100,4 @@ class Rectangle:
         Returns:
             float: return the area of the Rectangle
         """
-        return (self.__height * self.__width
-                if any(x != 0 for x in (self.__height, self.__width))
-                else 0)
+        return (self.__height * self.__width)
