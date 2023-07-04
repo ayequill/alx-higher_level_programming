@@ -109,7 +109,7 @@ class Rectangle:
         Returns:
             str: return a string representation of the Rectangle
         """
-        if all(x == 0 for x in (self.__height, self.__width)):
+        if any(x == 0 for x in (self.__height, self.__width)):
             return ''
         rectangle_str_rep = ''
 
