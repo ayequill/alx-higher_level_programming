@@ -90,7 +90,7 @@ class Rectangle:
             float: return the perimeter of the Rectangle
         """
         return (2 * (self.__height + self.__width)
-                if any(x != 0 for x in (self.__height, self.__width))
+                if all(x != 0 for x in (self.__height, self.__width))
                 else 0)
 
     def area(self) -> float:
