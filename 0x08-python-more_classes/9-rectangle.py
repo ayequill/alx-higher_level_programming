@@ -177,4 +177,4 @@ class Rectangle:
         Returns:
         Rectangle: new Rectangle instance representing a square
         """
-        return Rectangle(size, size)
+        return cls(size, size)
