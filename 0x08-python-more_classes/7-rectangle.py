@@ -121,7 +121,7 @@ class Rectangle:
         for col in range(self.__height):
             for _ in range(self.__width):
                 rectangle_str_rep += f"{self.print_symbol}"
-                    
+
             if col < self.__height - 1:
                 rectangle_str_rep += "\n"
         return rectangle_str_rep
@@ -140,28 +140,3 @@ class Rectangle:
         """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-
-
-my_rectangle_1 = Rectangle(8, 4)
-print(my_rectangle_1)
-print("--")
-my_rectangle_1.print_symbol = "&"
-print(my_rectangle_1)
-print("--")
-
-my_rectangle_2 = Rectangle(2, 1)
-print(my_rectangle_2)
-print("--")
-Rectangle.print_symbol = "C"
-print(my_rectangle_2)
-print("--")
-
-my_rectangle_3 = Rectangle(7, 3)
-print(my_rectangle_3)
-
-print("--")
-
-my_rectangle_3.print_symbol = ["C", "is", "fun!"]
-print(my_rectangle_3)
-
-print("--")
