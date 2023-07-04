@@ -126,4 +126,4 @@ class Rectangle:
         Returns:
             _str_: rectangle dimensions
         """
-        return f"Rectangle({self.__height}, {self.__width})"
+        return f"Rectangle({self.__height:d}, {self.__width:d})"
