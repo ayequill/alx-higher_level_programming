@@ -118,4 +118,4 @@ class Rectangle:
                 rectangle_str_rep += "#"
             if col < self.__height - 1:
                 rectangle_str_rep += "\n"
-            return rectangle_str_rep
+        return rectangle_str_rep
