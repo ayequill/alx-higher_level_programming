@@ -3,6 +3,7 @@
 A locked class
 """
 
+
 class LockedClass:
     """
     A restricted class that prevents dynamic creating
