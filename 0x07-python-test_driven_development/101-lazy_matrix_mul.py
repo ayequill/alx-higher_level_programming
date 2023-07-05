@@ -3,9 +3,12 @@
 A module for matrix multiplication
 """
 from numpy import matmul
+
 """
-importing matmul from numpy    
+importing matmul from numpy
 """
+
+
 def lazy_matrix_mul(m_a, m_b):
     """
     Perform a matrix multiplication
