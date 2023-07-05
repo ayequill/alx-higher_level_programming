@@ -83,3 +83,7 @@ OverflowError: cannot convert float infinity to integer
 
 >>> add_integer(2, b=5.5)
 7
+>>> add_integer(float("NaN"))
+Traceback (most recent call last):
+  ...
+ValueError: cannot convert float NaN to integer
