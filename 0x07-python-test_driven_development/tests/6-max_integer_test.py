@@ -17,6 +17,8 @@ class TestMaxInteger(unittest.TestCase):
         self.str = max_integer('siaw')
         self.empty_str = max_integer('')
         self.tuple_li = max_integer((1, 2, 3))
+        self.max_in_mid = max_integer([1, 4, 2])
+        self.one_element = max_integer([1])
 
     def test_ordered_list(self):
         """Test max_integer with an ordered list"""
@@ -45,6 +47,18 @@ class TestMaxInteger(unittest.TestCase):
     def test_tuple(self):
         """Test max_integer with a tuple"""
         self.assertEqual(self.tuple_li, 3)
+
+    def test_max_in_middlen(self):
+        """
+        Text max integer with max in middle
+        """
+        self.assertEqual(self.max_in_mid, 4)
+
+    def test_one_integer(self):
+        """
+        Checking for only one element 
+        """
+        self.assertEqual(self.one_element, 1)
 
 
 if __name__ == '__main__':
