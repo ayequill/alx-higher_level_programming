@@ -22,7 +22,7 @@ class Student:
         Returns dictionary representation of an
         instance
         """
-        if not attributes:
+        if attributes is None:
             return self.__dict__
         new_dict = {}
         for attribute in attributes:
