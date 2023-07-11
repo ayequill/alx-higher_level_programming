@@ -9,6 +9,12 @@ class BaseGeometry:
     BaseGeometry class
     """
 
+    def __init__(self):
+        """
+        Constructor
+        """
+        pass
+
     def area(self):
         raise Exception("area() is not implemented")
 
