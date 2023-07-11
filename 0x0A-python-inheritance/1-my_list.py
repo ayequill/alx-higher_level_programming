@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 A module that contains a function that prints elements in
-a list from a subclass in ascending order
+a list
 """
 
 
