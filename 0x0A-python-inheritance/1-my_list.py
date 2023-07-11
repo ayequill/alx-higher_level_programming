@@ -14,7 +14,5 @@ class MyList(list):
         """
         Prints elements in the class in sorted order
         """
-        if not isinstance(self, int):
-            raise TypeError("Only integers")
         sorted_list = sorted(self)
         print(sorted_list)
