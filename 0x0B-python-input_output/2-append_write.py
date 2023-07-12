@@ -12,7 +12,6 @@ def append_write(filename="", text=""):
     :param filename: Specify the file to be opened
     :param text: Write the text to the file
     :return: The number of characters added
-    :doc-author: Trelent
     """
     with open(filename, "a", encoding="utf-8") as file:
         return file.write(text)
