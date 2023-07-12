@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-A module that contains a function that prints elements in
+A module that contains a function that prints
+elements in
 a list
 """
 
@@ -12,6 +13,8 @@ class MyList(list):
 
     def print_sorted(self):
         """
-        Prints elements in the class in sorted order
+        Prints elements in the class in sorted
+        order
         """
-        print(sorted(self))
+        copy = self.copy()
+        print(sorted(copy))
