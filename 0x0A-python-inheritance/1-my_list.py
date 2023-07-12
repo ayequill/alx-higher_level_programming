@@ -13,4 +13,6 @@ class MyList(list):
         Prints elements in the class in sorted
         order
         """
-        print(sorted(super().copy()))
+        sorted_li = super().copy()
+        sorted_li.sort()
+        print(sorted_li)
