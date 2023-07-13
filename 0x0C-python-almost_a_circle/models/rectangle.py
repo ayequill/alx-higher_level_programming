@@ -136,8 +136,11 @@ class Rectangle(Base):
         for _ in range(self.__y):
             print()
         for _ in range(self.__height):
-            print(" " * self.__x, "#" * self.__width)
-
+            for x_axis in range(self.__x):
+                print(' ', end='')
+            for row in range(self.__width):
+                print('#', end='')
+            print()
     def __str__(self):
         """
         Returns a string rep of the rectangle instance
@@ -167,3 +170,14 @@ class Rectangle(Base):
         if kwargs and len(kwargs.keys()) > 0:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(2, 3, 2, 2)
+    r1.display()
+
+    print("---")
+
+    r2 = Rectangle(3, 2, 1, 0)
+    r2.display()
