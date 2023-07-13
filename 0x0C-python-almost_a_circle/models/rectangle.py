@@ -170,14 +170,34 @@ class Rectangle(Base):
         if kwargs and len(kwargs.keys()) > 0:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+    
+    
+    def to_dictionary(self):
+        """
+        Returns a dictionary representation of the instance
+
+        Returns:
+            dict: dictionary of the instance
+        """
+        return {
+            'id': self.id,
+            'width': self.__width,
+            'height': self.__height,
+            'x': self.__x,
+            'y': self.__y,
+        }
 
 
 if __name__ == "__main__":
 
-    r1 = Rectangle(2, 3, 2, 2)
-    r1.display()
+    r1 = Rectangle(10, 2, 1, 9)
+    print(r1)
+    r1_dictionary = r1.to_dictionary()
+    print(r1_dictionary)
+    print(type(r1_dictionary))
 
-    print("---")
-
-    r2 = Rectangle(3, 2, 1, 0)
-    r2.display()
+    r2 = Rectangle(1, 1)
+    print(r2)
+    r2.update(**r1_dictionary)
+    print(r2)
+    print(r1 == r2)
