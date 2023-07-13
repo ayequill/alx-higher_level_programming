@@ -123,3 +123,18 @@ class Rectangle(Base):
         :return: The area of the rectangle
         """
         return self.__width * self.__height
+
+    def display(self):
+
+        """
+        The display function prints the rectangle
+        with the character #
+
+        :param self: Reference the object itself
+        :return: None
+        """
+        for _ in range(self.__height):
+            print("#" * self.__width)
+
+    def __str__(self):
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
