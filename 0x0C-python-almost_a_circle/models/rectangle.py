@@ -148,17 +148,40 @@ class Rectangle(Base):
             {self.__x}/{self.__y} - {self.__width}/{self.__height}"
 
     
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Updates the instance with new value
         """
-        arg_li = (
-            'id',
-            'width',
-            'height',
-            'x',
-            'y'
-        )
+        if args and len(args) > 0:
+            arg_li = (
+                'id',
+                'width',
+                'height',
+                'x',
+                'y'
+            )
 
-        for arg in range(len(args)):
-            setattr(self, arg_li[arg], args[arg])
+            for arg in range(len(args)):
+                setattr(self, arg_li[arg], args[arg])
+        
+        if kwargs and len(kwargs.keys()) > 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(10, 10, 10, 10)
+    print(r1)
+
+    r1.update(10, height=1)
+    print(r1)
+
+    r1.update(width=1, x=2)
+    print(r1)
+
+    r1.update(y=1, width=2, x=3, id=89)
+    print(r1)
+
+    r1.update(x=1, height=2, y=3, width=4)
+    print(r1)
