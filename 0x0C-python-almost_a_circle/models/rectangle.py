@@ -9,6 +9,17 @@ class Rectangle(Base):
     """
     A Rectangle class
     """
+    # TODO
+    # @classmethod
+    # def raise_err(cls, name, **kwargs):
+    #     err_msg = {
+    #         "not-int": "must be an integer",
+    #         "negative": "must be > 0",
+    #         "negative_alt": "must be >= 0"
+    #     }
+    #     for key, value in kwargs.items():
+    #         if value in err_msg:
+    #             raise key(name + err_msg[value])
 
     def __init__(self, width, height, x=0, y=0, id=None):
 
@@ -27,41 +38,45 @@ class Rectangle(Base):
         :return: Nothing
         """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
-    def width(self) -> int:
+    def width(self):
         """
-        Returns the width
+        Width getter
         """
         return self.__width
 
     @width.setter
-    def width(self, value) -> None:
+    def width(self, value):
         """
-        Sets the width
+        Width setter
         """
-        if type(value) == int:
-            raise TypeError("must be an integer")
+        if type(value) is not int:
+            raise TypeError('width must be an integer')
+        if value <= 0:
+            raise ValueError('width must be > 0')
         self.__width = value
 
     @property
     def height(self):
         """
-        Gets the height
+        height getter
         """
         return self.__height
 
     @height.setter
-    def height(self, value) -> None:
+    def height(self, value):
         """
-        Sets the height
+        Sets the height value
         """
-        if type(value) == int:
-            raise TypeError("must be an integer")
+        if type(value) is not int:
+            raise TypeError('height must be an integer')
+        if value <= 0:
+            raise ValueError('height must be > 0')
         self.__height = value
 
     @property
@@ -72,26 +87,30 @@ class Rectangle(Base):
         return self.__x
 
     @x.setter
-    def x(self, value) -> None:
+    def x(self, value):
         """
         Sets the x value
         """
-        if type(value) == int:
-            raise TypeError("must be an integer")
+        if type(value) is not int:
+            raise TypeError('x must be an integer')
+        if value < 0:
+            raise ValueError('x must be >= 0')
         self.__x = value
 
     @property
     def y(self):
         """
-        Gets the y value
+        y getter
         """
         return self.__y
 
     @y.setter
-    def y(self, value) -> None:
+    def y(self, value):
         """
-        Sets y value
+        Sets the y value
         """
-        if type(value) == int:
-            raise TypeError("must be an integer")
+        if type(value) is not int:
+            raise TypeError('y must be an integer')
+        if value < 0:
+            raise ValueError('y must be >= 0')
         self.__y = value
