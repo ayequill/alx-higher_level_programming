@@ -22,7 +22,6 @@ class Rectangle(Base):
     #             raise key(name + err_msg[value])
 
     def __init__(self, width, height, x=0, y=0, id=None):
-
         """
         The __init__ function is a constructor for
         the Rectangle class.
@@ -125,7 +124,6 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-
         """
         The display function prints the rectangle
         with the character #
@@ -141,16 +139,16 @@ class Rectangle(Base):
             for row in range(self.__width):
                 print('#', end='')
             print()
+
     def __str__(self):
         """
         Returns a string rep of the rectangle instance
         Returns:
-            str: rectangle 
+            str: rectangle
         """
         return f"[Rectangle] ({self.id}) \
             {self.__x}/{self.__y} - {self.__width}/{self.__height}"
 
-    
     def update(self, *args, **kwargs):
         """
         Updates the instance with new value
@@ -166,12 +164,11 @@ class Rectangle(Base):
 
             for arg in range(len(args)):
                 setattr(self, arg_li[arg], args[arg])
-        
+
         if kwargs and len(kwargs.keys()) > 0:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-    
-    
+
     def to_dictionary(self):
         """
         Returns a dictionary representation of the instance
@@ -186,18 +183,3 @@ class Rectangle(Base):
             'x': self.__x,
             'y': self.__y,
         }
-
-
-if __name__ == "__main__":
-
-    r1 = Rectangle(10, 2, 1, 9)
-    print(r1)
-    r1_dictionary = r1.to_dictionary()
-    print(r1_dictionary)
-    print(type(r1_dictionary))
-
-    r2 = Rectangle(1, 1)
-    print(r2)
-    r2.update(**r1_dictionary)
-    print(r2)
-    print(r1 == r2)
