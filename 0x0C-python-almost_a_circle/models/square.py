@@ -1,8 +1,9 @@
-#!/usr/bin/python3    
+#!/usr/bin/python3
 """
 Module for a Square class
 """
 from rectangle import Rectangle
+
 
 class Square(Rectangle):
     """
@@ -11,18 +12,18 @@ class Square(Rectangle):
     Args:
         Rectangle (class): Rectangle class
     """
-    
+
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
         self.size = size
-        
+
     @property
     def size(self):
         """
         Size getter
         """
         return self.height
-    
+
     @size.setter
     def size(self, value):
         """
@@ -33,10 +34,10 @@ class Square(Rectangle):
         """
         self.width = value
         self.height = value
-    
+
     def __str__(self):
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
-    
+
     def update(self, *args, **kwargs):
         """
         Updates the instance with new value
@@ -51,11 +52,10 @@ class Square(Rectangle):
 
             for arg in range(len(args)):
                 setattr(self, arg_li[arg], args[arg])
-        
+
         if kwargs and len(kwargs.keys()) > 0:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-    
 
     def to_dictionary(self):
         """
@@ -70,17 +70,3 @@ class Square(Rectangle):
             'x': self.x,
             'y': self.y,
         }
-
-if __name__ == "__main__":
-
-    s1 = Square(10, 2, 1)
-    print(s1)
-    s1_dictionary = s1.to_dictionary()
-    print(s1_dictionary)
-    print(type(s1_dictionary))
-
-    s2 = Square(1, 1)
-    print(s2)
-    s2.update(**s1_dictionary)
-    print(s2)
-    print(s1 == s2)
