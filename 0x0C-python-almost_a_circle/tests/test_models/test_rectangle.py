@@ -64,14 +64,38 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.x, 10)
         self.assertEqual(rect.id, 66)
         self.assertEqual(rect.y, 10)
-    
-    def test_to_dictionary(self):
-        dict_rep = self.rect1.to_dictionary()
-        self.assertIsInstance(dict_rep, dict)
-        self.assertIn("id", dict_rep)
-        self.assertGreater(len(dict_rep.keys()), 0)
+
     
     def test_rect_display(self):
         r1 = Rectangle(6, 2, 0, 0)
         # self.as(r1.display(), "############")
         self.assertTrue(isinstance(r1.display().__str__(), str))
+    
+    def test_rect_to_dictionary(self):
+        rect_dict = self.rect1.to_dictionary()
+        self.assertIsInstance(rect_dict, dict)
+        self.assertIn("id", rect_dict)
+        self.assertIn("x", rect_dict)
+        self.assertIn("width", rect_dict)
+        self.assertIn("height", rect_dict)
+        self.assertIn("y", rect_dict)
+        self.assertEqual(len(rect_dict.keys()), 5)
+
+    def test_create_instance(self):
+        new_rect = Rectangle.create(**self.rec_dict)
+        self.assertIsInstance(new_rect, Rectangle)
+    
+    def test_to_json_string(self):
+        rect_dict = self.rect1.to_dictionary()
+        json_str = self.rect1.to_json_string(rect_dict)
+        self.assertIsInstance(json_str, str)
+    
+    def test_to_json_string_empty(self):
+        self.assertEqual(Rectangle.to_json_string(None), '[]')
+    
+    def test_inheritance(self):
+        self.assertTrue(issubclass(Rectangle, Base))
+        
+    def test_save_to_file(self):
+        Rectangle.save_to_file(None)
+        with open()
