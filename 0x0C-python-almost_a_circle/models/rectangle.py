@@ -2,8 +2,7 @@
 """
 Module for rectangle class
 """
-from base import Base
-
+from models.base import Base
 
 class Rectangle(Base):
     """
@@ -79,7 +78,7 @@ class Rectangle(Base):
         self.__height = value
 
     @property
-    def x(self):
+    def x(self) -> int:
         """
         Gets the x value
         """
@@ -123,7 +122,7 @@ class Rectangle(Base):
         """
         return self.__width * self.__height
 
-    def display(self):
+    def display(self) -> None:
         """
         The display function prints the rectangle
         with the character #
@@ -140,16 +139,16 @@ class Rectangle(Base):
                 print('#', end='')
             print()
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         Returns a string rep of the rectangle instance
         Returns:
             str: rectangle
         """
-        return f"[Rectangle] ({self.id}) \
-            {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return ('[Rectangle] ({}) {}/{} - {}/{}'.format(
+            self.id, self.x, self.y, self.width, self.height))
 
-    def update(self, *args, **kwargs):
+    def update(self, *args, **kwargs) -> None:
         """
         Updates the instance with new value
         """
@@ -169,7 +168,7 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
-    def to_dictionary(self):
+    def to_dictionary(self) -> dict:
         """
         Returns a dictionary representation of the instance
 
@@ -183,3 +182,8 @@ class Rectangle(Base):
             'x': self.__x,
             'y': self.__y,
         }
+
+r1 = Rectangle(6, 2, 0, 0)
+print(dir(r1.display))
+# print(str(r1.display()))
+print(True if "#" in repr(r1.display().__str__()) else False)
