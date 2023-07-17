@@ -187,16 +187,16 @@ class TestRectangle(unittest.TestCase):
         """
         Test saving Square instances to a CSV file.
         """
-        square_save = Rectangle(2, 10)
-        Square.save_to_file([self.rect1, rect_save])
-        instances = Rectangle.load_from_file_csv()
+        square_save = Square(2, 10)
+        Square.save_to_file([self.square1, square_save])
+        instances = Square.load_from_file_csv()
         for instance in instances:
-            self.assertIsInstance(instance, Rectangle)
+            self.assertIsInstance(instance, Square)
 
     def test_save_to_csv_empty(self):
         """
         Test saving an empty list to a CSV file.
         """
-        Rectangle.save_to_file_csv([])
-        output = Rectangle.load_from_file_csv()
+        Square.save_to_file_csv([])
+        output = Square.load_from_file_csv()
         self.assertEqual(output, [])
