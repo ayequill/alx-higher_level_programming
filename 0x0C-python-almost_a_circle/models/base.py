@@ -48,6 +48,8 @@ class Base:
 
         with open(file_name, "w", encoding="utf-8") \
                 as out_file:
+            if list_objs is None or list_objs == []:
+                out_file.write("[]")
             out_file.write(json_str)
 
     @staticmethod
