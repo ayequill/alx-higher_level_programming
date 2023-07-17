@@ -3,6 +3,7 @@
 Base class
 """
 import json
+from csv import writer, reader
 
 
 class Base:
@@ -102,3 +103,65 @@ class Base:
         for instance in instances:
             instance_li.append(cls.create(**instance))
         return instance_li
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Saves a list of objects to a file
+        with the class name preceded
+
+        Args:
+            list_objs (list): list of instances
+        """
+        file_name = cls.__name__ + ".csv"
+
+        list_obj_dict = list(map(lambda obj: obj.to_dictionary(), list_objs))
+
+        with open(file_name, mode="w", encoding="utf-8") as file:
+            if list_objs is None or list_objs == []:
+                file.write('[]')
+            csv_file = writer(file)
+
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    csv_file.writerow([
+                        obj.id,
+                        obj.width,
+                        obj.height,
+                        obj.x,
+                        obj.y
+                    ])
+
+                if cls.__name__ == "Square":
+                    csv_file.writerow([
+                        obj.id,
+                        obj.size,
+                        obj.x,
+                        obj.y
+                    ])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Loads CSV from and returns a list of instances
+        Returns:
+            list: list of instances
+        """
+        file_name = cls.__name__ + ".csv"
+        instance_list = []
+
+        try:
+            with open(file_name, encoding="utf-8", newline="") as file:
+                csv_reader = reader(file)
+                for row in csv_reader:
+                    if cls.__name__ == "Rectangle":
+                        instance = cls(int(row[1]), int(row[2]), int(
+                            row[3]), int(row[4]), int(row[0]))
+                    elif cls.__name__ == "Square":
+                        instance = cls(int(row[1]), int(
+                            row[2]), int(row[3]), int(row[0]))
+                    instance_list.append(instance)
+        except (FileNotFoundError, IndexError):
+            return []
+
+        return instance_list
