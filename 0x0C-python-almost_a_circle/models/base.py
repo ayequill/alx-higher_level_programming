@@ -46,9 +46,8 @@ class Base:
         file_name = cls.__name__ + ".json"
         json_str = cls.to_json_string([x.to_dictionary() for x in list_objs])
 
-        with open(file_name, "w", encoding="utf-8") as out_file:
-            if list_objs is None or list_objs == []:
-                out_file.write('[]')
+        with open(file_name, "w", encoding="utf-8") \
+                as out_file:
             out_file.write(json_str)
 
     @staticmethod
