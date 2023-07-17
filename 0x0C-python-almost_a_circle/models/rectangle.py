@@ -182,8 +182,3 @@ class Rectangle(Base):
             'x': self.__x,
             'y': self.__y,
         }
-
-r1 = Rectangle(6, 2, 0, 0)
-print(dir(r1.display))
-# print(str(r1.display()))
-print(True if "#" in repr(r1.display().__str__()) else False)
