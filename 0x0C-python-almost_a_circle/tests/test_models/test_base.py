@@ -4,6 +4,7 @@ Test Base class module
 """
 import unittest
 import json
+from os import path, remove
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -22,6 +23,16 @@ class TestBaseClass(unittest.TestCase):
         pass
     def tearDown(self):
         Base._Base__nb_objects = 0
+        paths = (
+            'Rectangle.csv',
+            'Rectangle.json',
+            'Square.csv',
+            'Square.json'
+        )
+        for path_ in paths:
+            if path.exists(path_):
+                remove(path_)
+        
         
     def test_id_integer(self):
         b1 = Base()
@@ -113,6 +124,24 @@ class TestBase_to_json_operation(unittest.TestCase):
         with self.assertRaises(TypeError):
             Base.to_json_string([], 1)
 
+    def test_create_instances(self):
+        """ testing load_from_file class method """
+
+        r = Rectangle(1, 2)
+        self.assertIsInstance(r, Rectangle)
+        Square.save_to_file([r])
+        items = Square.load_from_file()
+        self.assertIsInstance(items, list)
+        for i in items:
+            self.assertIsInstance(i, Square)
+
+        r = Square(1, 2)
+        self.assertIsInstance(r, Square)
+        Rectangle.save_to_file([r])
+        items = Rectangle.load_from_file()
+        self.assertIsInstance(items, list)
+        for i in items:
+            self.assertIsInstance(i, Rectangle)
     
         
     
