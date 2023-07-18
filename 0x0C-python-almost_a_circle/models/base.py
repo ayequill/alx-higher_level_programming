@@ -50,7 +50,8 @@ class Base:
                 as out_file:
             if list_objs is None or list_objs == []:
                 out_file.write("[]")
-            out_file.write(json_str)
+            else:
+                out_file.write(json_str)
 
     @staticmethod
     def from_json_string(json_string):
