@@ -171,7 +171,8 @@ class Base:
     @staticmethod
     def draw(list_rectangles, list_squares):
         """
-        Opens a window and draws all the Rectangles and Squares using Turtle graphics
+        Opens a window and draws all the Rectangles
+        and Squares using Turtle graphics
 
         Args:
             list_rectangles (list): List of Rectangle instances
