@@ -167,3 +167,71 @@ class Base:
             return []
 
         return instance_list
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Opens a window and draws all the Rectangles and Squares using Turtle graphics
+
+        Args:
+            list_rectangles (list): List of Rectangle instances
+            list_squares (list): List of Square instances
+        """
+        import turtle
+
+        screen = turtle.Screen()
+        screen.bgcolor("white")
+
+        for rect in list_rectangles:
+            draw_rectangle(rect)
+
+        for square in list_squares:
+            draw_square(square)
+
+        turtle.done()
+
+    @staticmethod
+    def draw_rectangle(rectangle):
+        """
+        Draws a rectangle using Turtle graphics
+
+        Args:
+            rectangle (Rectangle): Rectangle instance to draw
+        """
+        import turtle
+
+        turtle.penup()
+        turtle.goto(rectangle.x, rectangle.y)
+        turtle.pendown()
+        turtle.color("red")
+        turtle.begin_fill()
+
+        for _ in range(2):
+            turtle.forward(rectangle.width)
+            turtle.right(90)
+            turtle.forward(rectangle.height)
+            turtle.right(90)
+
+        turtle.end_fill()
+
+    @staticmethod
+    def draw_square(square):
+        """
+        Draws a square using Turtle graphics
+
+        Args:
+            square (Square): Square instance to draw
+        """
+        import turtle
+
+        turtle.penup()
+        turtle.goto(square.x, square.y)
+        turtle.pendown()
+        turtle.color("blue")
+        turtle.begin_fill()
+
+        for _ in range(4):
+            turtle.forward(square.size)
+            turtle.right(90)
+
+        turtle.end_fill()
