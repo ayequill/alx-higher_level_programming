@@ -44,9 +44,10 @@ class Base:
             list_objs (list): list of instances
         """
         file_name = cls.__name__ + ".json"
-        
+
         if list_objs:
-            json_str = cls.to_json_string([x.to_dictionary() for x in list_objs])
+            json_str = cls.to_json_string(
+                [x.to_dictionary() for x in list_objs])
 
         with open(file_name, "w", encoding="utf-8") \
                 as out_file:
