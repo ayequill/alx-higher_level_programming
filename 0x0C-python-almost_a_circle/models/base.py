@@ -184,10 +184,10 @@ class Base:
         screen.bgcolor("white")
 
         for rect in list_rectangles:
-            draw_rectangle(rect)
+            Base.draw_rectangle(rect)
 
         for square in list_squares:
-            draw_square(square)
+            Base.draw_square(square)
 
         turtle.done()
 
