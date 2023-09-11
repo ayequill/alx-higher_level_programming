@@ -22,12 +22,12 @@ jobs:
       - name: Code Checkout
         uses: actions/checkout@v2
         with:
-          path: ${{ env.0X12 }}
+          path: $0X12
 
       - name: Install Dependencies
         run: npm ci
-        working-directory: ${{ env.0X12 }}
+        working-directory: $0X12
 
       - name: Semistandard Test & Fix
         run: npm run semi:fix
-        working-directory: ${{ env.0X12 }}
+        working-directory: $0X12
