@@ -7,7 +7,7 @@ on:
 
 env:
   NODE_VERSION: 14
-  X12: .0x12-javascript-warm_up
+  X12: 0x12-javascript-warm_up
 
 jobs:
   linting:
