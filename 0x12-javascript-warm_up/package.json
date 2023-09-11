@@ -1,0 +1,13 @@
+{
+  "name": "0x12-javascript-warm_up",
+  "version": "1.0.0",
+  "description": "0x12. JavaScript - Warm up",
+  "main": "main.js",
+  "scripts": {
+    "semi:test": "semistandard && *.js",
+    "semi:fix": "semistandard --fix && *.js",
+    "test:standard": "standard && node *.js"
+  },
+  "author": "Siaw A. Nicholas",
+  "license": "ISC"
+}
