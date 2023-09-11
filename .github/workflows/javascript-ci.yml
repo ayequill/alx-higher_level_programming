@@ -26,6 +26,10 @@ jobs:
         working-directory: ${{ env.X12 }}
         run: npm install
 
-      - name: Semistandard Test & Fix
+      - name: Semistandard Fix
         working-directory: ${{ env.X12 }}
         run: npm run semi:fix
+      
+      - name: Standard Fix
+        working-directory: ${{ env.X12 }}
+        run: npm run standard:fix

@@ -6,7 +6,7 @@
   "scripts": {
     "semi:test": "semistandard && node *.js",
     "semi:fix": "semistandard --fix && node *.js",
-    "test:standard": "standard && node *.js"
+    "standard:fix": "standard --fix && node *.js"
   },
   "author": "Siaw A. Nicholas",
   "license": "ISC",
