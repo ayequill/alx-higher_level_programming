@@ -7,7 +7,7 @@ const factorial = (arg) => {
       ? 1
       : arg < 0
         ? 1
-        : parseInt(arg) * factorial(parseInt(arg) - 1);
+        : parseInt(arg, 10) * factorial(parseInt(arg, 10) - 1);
 };
 
 console.log(factorial(process.argv[2]));
