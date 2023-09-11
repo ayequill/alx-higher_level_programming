@@ -21,12 +21,11 @@ jobs:
 
       - name: Code Checkout
         uses: actions/checkout@v4
-        with:
-          sparse-checkout: | 
-            ${{ env.X12 }}
 
       - name: Install Dependencies
+        working-directory: ${{ env.X12 }}
         run: npm install
 
       - name: Semistandard Test & Fix
+        working-directory: ${{ env.X12 }}
         run: npm run semi:fix
