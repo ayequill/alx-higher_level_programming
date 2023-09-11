@@ -32,4 +32,4 @@ jobs:
       
       - name: Standard Fix
         working-directory: ${{ env.X12 }}
-        run: npm standard:fix
+        run: npm run standard:fix
