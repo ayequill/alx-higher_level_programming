@@ -4,9 +4,9 @@
   "description": "0x12. JavaScript - Warm up",
   "main": "main.js",
   "scripts": {
-    "semi:test": "semistandard && node *.js",
-    "semi:fix": "semistandard --fix && node *.js",
-    "standard:fix": "standard --fix && node *.js"
+    "semi:test": "semistandard  *.js",
+    "semi:fix": "semistandard --fix *.js",
+    "standard:fix": "standard --fix *.js"
   },
   "author": "Siaw A. Nicholas",
   "license": "ISC",
