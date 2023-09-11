@@ -6,14 +6,14 @@
  */
 
 const printArg = () => {
-  const argsLen = process.argv.length;
+  let count = 0;
 
-  if (argsLen) {
-    if (argsLen < 3) {
-      return 'No argument';
-    }
-    return process.argv[2];
+  process.argv.forEach((_) => (count += 1));
+
+  if (count < 3) {
+    return 'No argument';
   }
+  return process.argv[2];
 };
 
 console.log(printArg());
