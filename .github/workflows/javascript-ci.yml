@@ -7,7 +7,7 @@ on:
 
 env:
   NODE_VERSION: 14
-  0X12: /0x12-javascript-warm_up
+  X12: /0x12-javascript-warm_up
 
 jobs:
   linting:
@@ -22,12 +22,12 @@ jobs:
       - name: Code Checkout
         uses: actions/checkout@v2
         with:
-          path: $0X12
+          path: ${{ env.X12 }}
 
       - name: Install Dependencies
         run: npm ci
-        working-directory: $0X12
+        working-directory: ${{ env.X12 }}
 
       - name: Semistandard Test & Fix
         run: npm run semi:fix
-        working-directory: $0X12
+        working-directory: ${{ env.X12 }}
