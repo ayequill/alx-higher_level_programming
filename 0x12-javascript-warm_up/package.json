@@ -9,5 +9,9 @@
     "test:standard": "standard && node *.js"
   },
   "author": "Siaw A. Nicholas",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "semistandard": "^17.0.0",
+    "standard": "^17.1.0"
+  }
 }
