@@ -8,8 +8,11 @@ class Square extends Rectangle {
   }
 
   charPrint (c) {
-    if (c === undefined) return this.print();
-    for (let i = 0; i < this.height; i++) console.log('C'.repeat(this.width));
+    if (c) {
+      for (let i = 0; i < this.height; i++) console.log('C'.repeat(this.width));
+    } else {
+      this.print(c);
+    }
   }
 }
 
