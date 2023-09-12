@@ -5,6 +5,7 @@ const myObject = {
 };
 console.log(myObject);
 Object.assign(myObject, { incr () { this.value++; } });
+myObject.incr();
 console.log(myObject);
 myObject.incr();
 console.log(myObject);
