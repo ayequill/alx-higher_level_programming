@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const factorial = (arg) => {
+function factorial(arg) {
   return isNaN(parseInt(arg, 10))
     ? 1
     : arg === 0 || arg === 1
