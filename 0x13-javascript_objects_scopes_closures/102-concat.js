@@ -2,7 +2,7 @@
 
 const fs = require('fs').promises;
 
-async function concatFiles(file1, file2, file3) {
+async function concatFiles (file1, file2, file3) {
   try {
     const data1 = await fs.readFile(file1, 'utf8');
     const data2 = await fs.readFile(file2, 'utf8');
