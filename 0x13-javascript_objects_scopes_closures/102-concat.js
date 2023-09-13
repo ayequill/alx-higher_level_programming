@@ -1,29 +1,18 @@
 #!/usr/bin/node
-const fs = require('fs');
 
-const concatFiles = (file1, file2, output) => {
-  let concatText = '';
+const fs = require('fs').promises;
 
-  fs.readFile(file1, 'utf8', (err, data) => {
-    if (!err) {
-      concatText += data + '\n';
-      fs.readFile(file2, 'utf8', (err, data) => {
-        if (!err) {
-          concatText += data;
-          fs.writeFile(output, concatText, 'utf8', (err) => {
-            if (err) {
-              console.log(err);
-            }
-          });
-        } else {
-          console.log(err);
-        }
-      });
-    } else {
-      console.log(err);
-    }
-  });
-};
+async function concatFiles(file1, file2, file3) {
+  try {
+    const data1 = await fs.readFile(file1, 'utf8');
+    const data2 = await fs.readFile(file2, 'utf8');
+
+    await fs.writeFile(file3, data1 + '\n', 'utf8');
+    await fs.writeFile(file3, data2, { flag: 'a' }, 'utf8');
+  } catch (e) {
+    console.error(e);
+  }
+}
 
 const [, , file1, file2, file3] = process.argv;
 
