@@ -22,6 +22,6 @@ if __name__ == "__main__":
 
     state = session.query(State).first()
 
-    print(f"{state.id}: {state.name}")
+    print(f"{state.id}: {state.name}" if state else "Nothing")
 
     session.close()
