@@ -9,7 +9,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(user=argv[1],
                          password=argv[2],
                          db=argv[3],
-                         host="127.0.0.1",
+                         host="localhost",
                          port=3306)
 
     # Create a cursor pointer to interact with the database
