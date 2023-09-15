@@ -5,7 +5,7 @@ if __name__ == "__main__":
     from sys import argv
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
-    from model_state import Base, State
+    from model_state import State
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                            .format(argv[1],
@@ -13,18 +13,12 @@ if __name__ == "__main__":
                                    argv[3]),
                            pool_pre_ping=True)
 
-    Base.metadata.create_all(engine)
+    # Base.metadata.create_all(engine)
     create_session = sessionmaker(bind=engine)
     session = create_session()
 
     state = session.query(State).order_by(State.id).first()
 
-    # print(f"{state.id}: {state.name}" if state else "Nothing")
-    # print('{:d}: {:s}'.format(state.id, state.name) if state else "Nothing")
-
-    if (state is None):
-        print('Nothing')
-    else:
-        print('{:d}: {:s}'.format(state.id, state.name))
+    print(f"{state.id}: {state.name}" if state else "Nothing")
 
     session.close()
