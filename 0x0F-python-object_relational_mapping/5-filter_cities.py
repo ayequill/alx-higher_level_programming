@@ -18,7 +18,7 @@ if __name__ == "__main__":
         cursor.execute(
             """SELECT cities.name
             FROM cities
-            INNER JOIN
+            LEFT JOIN
             states on
             states.id = cities.state_id
             WHERE states.name
@@ -28,8 +28,7 @@ if __name__ == "__main__":
 
         data = cursor.fetchall()
 
-        for row in data:
-            print(row[0])
+        print(*[row[0] for row in data], sep=', ')
 
     except MySQLdb.Error as e:
         print(e)
