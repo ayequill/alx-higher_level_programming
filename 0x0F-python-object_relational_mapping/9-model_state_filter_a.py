@@ -20,6 +20,9 @@ if __name__ == "__main__":
         data = (session.query(State)
                 .filter(State.name.like('%a%')).order_by(State.id))
 
-        print('\n'.join(f"{state.id}: {state.name}" for state in data))
+        # print('\n'.join(f"{state.id}: {state.name}" for state in data))
+
+        for row in data:
+            print("{}: {}".format(row.id, row.name))
     except (Exception, IndexError) as e:
         print(e)
