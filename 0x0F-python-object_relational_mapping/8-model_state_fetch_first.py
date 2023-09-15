@@ -6,7 +6,7 @@ from sys import argv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from model_state import State
+from model_state import Base, State
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
@@ -15,8 +15,7 @@ if __name__ == "__main__":
                                    argv[3]),
                            pool_pre_ping=True)
 
-    # Base.metadata.create_all(engine)
-
+    Base.metadata.create_all(engine)
     create_session = sessionmaker(bind=engine)
     session = create_session()
 
