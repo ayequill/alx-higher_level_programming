@@ -17,6 +17,9 @@ if __name__ == "__main__":
     session = create_session()
 
     data = (session.query(State)
-            .filter(State.name.like('%a%')).order_by(State.id).all())
+            .filter(State.name.like('%a%')).order_by(State.id))
 
-    print('\n'.join(f"{state.id}: {state.name}" for state in data))
+    # print('\n'.join(f"{state.id}: {state.name}" for state in data))
+
+    for state in data:
+        print("{}: {}".format(state.id, state.name))
