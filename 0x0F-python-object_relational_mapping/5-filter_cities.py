@@ -11,7 +11,7 @@ if __name__ == "__main__":
                                      password=argv[2],
                                      db=argv[3],
                                      # TODO change to localhost
-                                     host="127.0.0.1",
+                                     host="localhost",
                                      port=3306)
 
         cursor = dbInstance.cursor()
