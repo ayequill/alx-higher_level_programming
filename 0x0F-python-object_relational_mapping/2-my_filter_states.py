@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """ This module searches for an entry and prints """
-import MySQLdb
 from sys import argv
+
+import MySQLdb
 
 if __name__ == "__main__":
     try:
@@ -17,7 +18,7 @@ if __name__ == "__main__":
 
         cursor.execute("""SELECT * FROM
                        states WHERE name
-                       LIKE '{}'
+                       LIKE BINARY '{}'
                        ORDER BY states.id
                        """.format(argv[4]))
 
