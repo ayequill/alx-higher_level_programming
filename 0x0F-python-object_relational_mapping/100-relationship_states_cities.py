@@ -21,8 +21,7 @@ if __name__ == "__main__":
         state = State(name="California")
         city = City(name="San Francisco", state=state)
 
-        session.add(state)
-        session.add(city)
+        session.add(state, city)
         session.commit()
     except (Exception, IndexError) as e:
         print(e)
