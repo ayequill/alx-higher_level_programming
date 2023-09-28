@@ -4,6 +4,14 @@
 
 def find_peak(list_of_integers):
     """ Finds the peak element """
+    if not list_of_integers or len(list_of_integers) == 0:
+        return None
+    if len(list_of_integers) == 1:
+        return list_of_integers[0]
+
+    if len(list_of_integers) == 2:
+        return max(list_of_integers)
+
     left = 0
     right = len(list_of_integers) - 1
 
@@ -18,4 +26,11 @@ def find_peak(list_of_integers):
             right = mid - 1
         else:
             left = mid + 1
-    return None
+
+
+print(find_peak([1, 2, 4, 6, 3]))
+print(find_peak([4, 2, 1, 2, 3, 1]))
+print(find_peak([2, 2, 2]))
+print(find_peak([]))
+print(find_peak([-2, -4, 2, 1]))
+print(find_peak([4, 2, 1, 2, 2, 2, 3, 1]))
