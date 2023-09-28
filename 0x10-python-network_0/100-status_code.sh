@@ -1,3 +1,3 @@
 #!/bin/bash
 # Display only the status code
-curl -sI "$1" | head -n1 | awk -F ' ' '{print $2}'
+curl -sI -o /dev/null -w "%{http_code}" "$1"
