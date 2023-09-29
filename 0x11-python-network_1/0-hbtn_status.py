@@ -15,5 +15,4 @@ if __name__ == "__main__":
             __content += str(content)
             __content_utf += str(content.decode("utf-8"))
 
-    print(f"Body response:\n    - {__type}\n    - {__content}\n"
-          f"    - {__content_utf}")
+    print(f"Body response:\n\t- {__type}\n\t- {__content}\n\t- {__content_utf}")
