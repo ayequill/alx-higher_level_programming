@@ -13,4 +13,4 @@ response = get(f"https://api.github.com/repos/{user}/{repo}/commits",
 if response.status_code == 200:
     data = response.json()
     for commit in data:
-        print(f"{commit['sha']}: {commit['author']['login']}")
+        print(f"{commit.get('sha')}: {commit.get('author').login}")
