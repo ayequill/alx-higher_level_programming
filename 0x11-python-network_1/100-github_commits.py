@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Gets all commits for a specific repository """
-if '__name__' == '__main__':
+if __name__ == '__main__':
     from sys import argv
     from requests import get
 
