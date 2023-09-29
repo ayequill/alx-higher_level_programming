@@ -25,3 +25,5 @@ if __name__ == "__main__":
 
     except (Exception, IndexError) as e:
         print(e)
+    finally:
+        session.close()
