@@ -9,4 +9,3 @@ if __name__ == "__main__":
     if response.status_code == 200:
         data = response.text
         print(f"Body response:\n\t: {type(data)}\n\tent: {data}")
-        print(type(data))
