@@ -8,4 +8,4 @@ if __name__ == "__main__":
 
     if response.status_code == 200:
         data = response.text
-        print(f"Body response:\n\t: {type(data)}\n\tent: {data}")
+        print(f"Body response:\n\t- type: {type(data)}\n\t- content: {data}")
