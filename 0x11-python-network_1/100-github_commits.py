@@ -11,6 +11,6 @@ headers = {
 response = get(f"https://api.github.com/repos/{user}/{repo}/commits")
 if response.status_code == 200:
     data = response.json()
-    for commit in data:
+    for commit in data[:10]:
         author = commit.get('commit').get('author').get('name')
         print(f"{commit.get('sha')}: {author}")
