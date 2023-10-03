@@ -27,9 +27,13 @@ if __name__ == '__main__':
                     codes[status] = 1
                 line_counts += 1
 
-                if line_counts % 10 == 0:
-                    help_print()
+                
             except (ValueError, IndexError):
                 continue
+            else:
+                if line_counts % 10 == 0:
+                    help_print()
     except KeyboardInterrupt:
         help_print()
+
+    help_print()
