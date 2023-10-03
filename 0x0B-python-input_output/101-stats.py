@@ -8,19 +8,16 @@ if __name__ == '__main__':
 
     line_counts = 0
 
-
     def help_print():
         """ Helper Function to print """
         print(f"File size: {total_file_size}")
         for code, count in sorted(codes.items()):
             print(f"{code}: {count}")
 
-
     def handle_signal(signum, frame):
         """ Handle signal """
         help_print()
         # exit(0)
-
 
     signal(SIGINT, handle_signal)
 
