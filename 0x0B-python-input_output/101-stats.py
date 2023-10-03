@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+""" Log Passing """
 from sys import stdin, exit
 from signal import signal, SIGINT
 total_file_size = 0
@@ -8,12 +9,14 @@ line_counts = 0
 
 
 def help_print():
+    """ Helper Function to print """
     print(f"File size: {total_file_size}")
     for code, count in sorted(codes.items()):
         print(f"{code}: {count}")
 
 
 def handle_signal(signum, frame):
+    """ Handle signal """
     help_print()
     # exit(0)
 
