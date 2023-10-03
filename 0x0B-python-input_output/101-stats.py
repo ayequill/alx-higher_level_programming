@@ -20,25 +20,25 @@ if __name__ == '__main__':
     #     # exit(0)
 
     # signal(SIGINT, handle_signal)
-try:
-    for line in stdin:
-        try:
-            line_parts = line.split()
+    try:
+        for line in stdin:
+            try:
+                line_parts = line.split()
 
-            total_file_size += int(line_parts[-1])
-            status = line_parts[-2]
+                total_file_size += int(line_parts[-1])
+                status = line_parts[-2]
 
-            if status in codes:
-                codes[status] += 1
-            else:
-                codes[status] = 1
-            line_counts += 1
+                if status in codes:
+                    codes[status] += 1
+                else:
+                    codes[status] = 1
+                line_counts += 1
 
-            if line_counts % 10 == 0:
-                help_print()
-        except (ValueError, IndexError):
-            continue
-except KeyboardInterrupt:
+                if line_counts % 10 == 0:
+                    help_print()
+            except (ValueError, IndexError):
+                continue
+    except KeyboardInterrupt:
+        help_print()
+
     help_print()
-
-help_print()
