@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """ Log Passing """
 if __name__ == '__main__':
-    from sys import stdin, exit
-    from signal import signal, SIGINT
+    from sys import stdin
     total_file_size = 0
     codes = {}
 
@@ -27,7 +26,6 @@ if __name__ == '__main__':
                     codes[status] = 1
                 line_counts += 1
 
-                
             except (ValueError, IndexError):
                 continue
             else:
