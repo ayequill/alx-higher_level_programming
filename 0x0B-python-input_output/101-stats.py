@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 """ Log Passing """
 if __name__ == '__main__':
     from sys import stdin, exit
