@@ -13,13 +13,6 @@ if __name__ == '__main__':
         print(f"File size: {total_file_size}")
         for code, count in sorted(codes.items()):
             print(f"{code}: {count}")
-
-    # def handle_signal(signum, frame):
-    #     """ Handle signal """
-    #     help_print()
-    #     # exit(0)
-
-    # signal(SIGINT, handle_signal)
     try:
         for line in stdin:
             try:
@@ -40,5 +33,3 @@ if __name__ == '__main__':
                 continue
     except KeyboardInterrupt:
         help_print()
-
-    help_print()
