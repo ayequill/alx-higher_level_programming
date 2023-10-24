@@ -7,12 +7,12 @@ const URL = `https://swapi-api.alx-tools.com/api/films/${id}`;
 
 request(URL, (err, res, body) => {
   if (err) console.log(err);
-  const characters = JSON.parse(body).characters
+  const characters = JSON.parse(body).characters;
 
   characters.forEach((url) => {
     request(url, (_, res, body) => {
-        const charData = JSON.parse(body)
-        console.log(charData.name);
+      const charData = JSON.parse(body);
+      console.log(charData.name);
     });
   });
 });
